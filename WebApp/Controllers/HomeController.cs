@@ -3,24 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+
     public class HomeController : Controller
     {
-        public int Add()
+        public IActionResult Index()
         {
-            return (5 * 4);
-        }
+            /* var date = DateTime.Now.ToString("dddd dd, MMMM (MM) yyyy hh:mm:ss");
+             base.ViewBag.date = date;*/
 
-        public string Welcome()
-        {
-            return "Welcome Ejiro";
-        }
+            var people = new List<Person>();
+            people.Add(new Person { LastName = "Prolifik", FirstName = "Lexzy", Age = 49 });
+            people.Add(new Person { LastName = "Ben", FirstName = "Fejiro", Age = 42 });
+            people.Add(new Person { LastName = "Dele", FirstName = "Adeyemi", Age = 59 });
+            people.Add(new Person { LastName = "Bob", FirstName = "Tabor", Age = 19 });
 
-        public string Index()
-        {
-            return "Welcome to asp.net core";
+            return View(people);
         }
     }
 }
