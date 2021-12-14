@@ -1,24 +1,8 @@
-﻿@using WebApp.Models;
-@model List<Person>
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
 
-<h1>Hello Fejiro  -  @ViewBag.date</h1>
-
-<table border="1">
-    <thead>
-        <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Age</td>
-        </tr>
-    </thead>
-    @foreach (Person item in Model)
-    {
-        <tr>
-            <td>@item.LastName</td>
-            <td>@item.FirstName</td>
-            <td>@item.Age</td>
-        </tr>
-
-    }
-
-</table>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
